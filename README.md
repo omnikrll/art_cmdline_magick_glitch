@@ -2,6 +2,7 @@
 
 This is a slimmed-down version for importing to Glitch. The complete repository, with install instructions and PowerPoint slides, can be found [here.](https://github.com/Vampire-Computer-People/art_cmdline_magick)
 
+Note that this uses ImageMagick 6, not 7!
 
 # Script execution examples
 
@@ -9,27 +10,27 @@ Scripts are set to output files to the /output folder.
 
 ## Simple conversion:
 
-`magick sprites/veto_side_step_south_east00.png output/jpeg_convert.jpg`
+`convert sprites/veto_side_step_south_east00.png output/jpeg_convert.jpg`
 
 ## Conversion with wildcards:
 
-`magick sprites/veto_side_step_south_east*.png output/jpeg_convert%02d.jpg`
+`convert sprites/veto_side_step_south_east*.png output/jpeg_convert%02d.jpg`
 
 ## Scale:
 
-`magick sprites/veto_side_step_south_east00.png -scale 500% output/big.png`
+`convert sprites/veto_side_step_south_east00.png -scale 500% output/big.png`
 
 ## Scale with distortion:
 
-`magick sprites/veto_side_step_south_east00.png -scale 10% -scale 1000% output/pixelated.png`
+`convert sprites/veto_side_step_south_east00.png -scale 10% -scale 1000% output/pixelated.png`
 
 ## Montage - create a sprite sheet from images
 
-`magick montage sprites/veto_side_step_south_east*.png -tile 3x2 -geometry 200x200 -background transparent output/sprite_sheet.png`
+`convert montage sprites/veto_side_step_south_east*.png -tile 3x2 -geometry 200x200 -background transparent output/sprite_sheet.png`
 
 ## Split the sheet back into separate images
 
-`magick output/sprite_sheet.png -crop 200x200 output/tile_%02d.png`
+`convert output/sprite_sheet.png -crop 200x200 output/tile_%02d.png`
 
 ## Custom CLI - sprite sheet
 
